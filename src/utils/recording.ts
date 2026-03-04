@@ -1,4 +1,4 @@
-const chunks: Blob[] = [];
+let chunks: Blob[] = [];
 let mediaRecorder: MediaRecorder | null = null;
 
 export const startRecord = async (onRecordingReady?: (data: Blob) => void) => {
@@ -11,6 +11,7 @@ export const startRecord = async (onRecordingReady?: (data: Blob) => void) => {
 
     mediaRecorder.onstop = async () => {
       const blob = new Blob(chunks, { type: "audio/webm" });
+      chunks = [];
 
       if (onRecordingReady) onRecordingReady(blob);
     };
