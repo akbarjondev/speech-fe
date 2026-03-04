@@ -23,11 +23,15 @@ Used models:
    ```bash
     npm install
    ```
-4. Run build command:
+4. Create a .env file in the root directory and add VITE_BASE_URL:
+   ```
+    VITE_BASE_URL='http://localhost:4000'
+   ```
+5. Run build command:
    ```bash
     npm run build
    ```
-5. Run build folder:
+6. Run build folder:
    ```bash
     npm run preview
    ```
@@ -48,7 +52,11 @@ Used models:
    ```bash
     npm install
    ```
-4. Start the development server:
+4. Create a .env file in the root directory and add VITE_BASE_URL:
+   ```
+    VITE_BASE_URL='http://localhost:4000'
+   ```
+5. Start the development server:
    ```bash
     npm run dev
    ```
