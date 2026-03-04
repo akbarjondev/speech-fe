@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# Speech Recognition App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple speech recognition application built using React.js and Browser's SpeechRecognition api. The app allows users to convert spoken Uzbek words into English text using OpenAI's API. OpenAI's transcription service is used to convert the audio input into text and then translate it from Uzbek to English.
 
-Currently, two official plugins are available:
+Used models:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- gpt-4o-transcribe - for transcribing audio to text
+- gpt-5.2 - for translating Uzbek text to English
 
-## React Compiler
+## How to run the app in build mode
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone the repository:
 
-## Expanding the ESLint configuration
+   ```bash
+    git clone https://github.com/akbarjondev/speech-fe.git
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. Navigate to the project directory:
+   ```bash
+    cd speech-fe
+   ```
+3. Install the dependencies:
+   ```bash
+    npm install
+   ```
+4. Run build command:
+   ```bash
+    npm run build
+   ```
+5. Run build folder:
+   ```bash
+    npm run preview
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## How to run the app in development mode
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Clone the repository:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+    git clone https://github.com/akbarjondev/speech-fe.git
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Navigate to the project directory:
+   ```bash
+    cd speech-fe
+   ```
+3. Install the dependencies:
+   ```bash
+    npm install
+   ```
+4. Start the development server:
+   ```bash
+    npm run dev
+   ```
