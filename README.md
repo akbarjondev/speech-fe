@@ -60,3 +60,7 @@ Used models:
    ```bash
     npm run dev
    ```
+
+## Issue Resolved
+
+1. The issue regarding to recording old audio and sending it to the server has been resolved. The root cause I did not clear the audio chunks array after sending the audio data to the server. Now, after sending the audio data, the audio chunks array is cleared, ensuring that only new audio data is recorded and sent to the server in subsequent recordings.
